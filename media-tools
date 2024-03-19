@@ -1,6 +1,6 @@
 #!/bin/bash
 
-commands=("Compare Audio" "Convert to Opus" "Mass Crop Images" "Mass Thumbnail" "Sort by Album" "Sort by Artist" "Sort by Artist Recursive" "Sort by Genre" "View Metadata" "View Metadata All" "Quit")
+commands=("Compare Audio" "Convert to Opus" "Mass Crop Images" "Mass Thumbnail" "Remove Audio" "Sort by Album" "Sort by Artist" "Sort by Artist Recursive" "Sort by Genre" "View Metadata" "View Metadata All" "Quit")
 
 selected=0
 
@@ -44,6 +44,11 @@ execute_command() {
             python3 Media-Tools/tools/mass-thumbnail.py
             read -p "Press Enter to return to the menu..."
             ;;
+        "Remove Audio")
+            # Add your command logic here
+            python3 Media-Tools/tools/remove-audio.py
+            read -p "Press Enter to return to the menu..."
+            ;;        
         "Sort by Album") 
             # Add your command logic here
             python3 Media-Tools/tools/sort-by-album.py
