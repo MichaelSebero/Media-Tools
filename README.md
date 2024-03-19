@@ -27,6 +27,9 @@ This script mass crops images to an output folder.
 ## Mass Thumbnail
 This script adds thumbnails of the user's choice to `.mp3` and `.flac` files in a given directory.
 
+## Remove Audio
+This script removes audio from video files in a given directory.
+
 ## Sort by Album
 This script organizes songs within a specified directory by creating folders named after their album metadata.
 
