@@ -30,6 +30,9 @@ This script adds thumbnails of the user's choice to `.mp3` and `.flac` files in 
 ## Remove Audio
 This script removes audio from video files in a given directory.
 
+## Rotate Video
+This script rotates a video by 90, 180 or 270 depending on the user's choice.
+
 ## Sort by Album
 This script organizes songs within a specified directory by creating folders named after their album metadata.
 
