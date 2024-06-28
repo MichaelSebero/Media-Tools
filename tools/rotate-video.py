@@ -28,7 +28,7 @@ def rotate_video(input_file, output_file, angle):
     rotated_clip.write_videofile(output_file, codec='libx264', bitrate='5000k', fps=clip.fps)
 
 if __name__ == "__main__":
-    input_file = input("Enter path of the video file to rotate: ")
+    input_file = input("Enter the path of the video file to rotate: ")
     while not os.path.exists(input_file):
         print("File not found. Please enter a valid file path.")
         input_file = input("Enter the full path of the video file to rotate: ")
