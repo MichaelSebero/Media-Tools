@@ -1,6 +1,6 @@
 #!/bin/bash
 
-commands=("Compare Audio" "Convert to Opus" "Mass Crop Images" "Mass Thumbnail" "Remove Audio" "Sort by Album" "Sort by Artist" "Sort by Artist Recursive" "Sort by Genre" "View Metadata" "View Metadata All" "Quit")
+commands=("Compare Audio" "Convert to Opus" "Mass Crop Images" "Mass Thumbnail" "Remove Audio" "Sort by Album" "Sort by Artist" "Sort by Artist Recursive" "Sort by Genre" "Sort by Resolution" "View Metadata" "View Metadata All" "Quit")
 
 selected=0
 
@@ -69,6 +69,11 @@ execute_command() {
             python3 Media-Tools/tools/sort-by-genre.py
             read -p "Press Enter to return to the menu..."
             ;;        
+        "Sort by Resolution")
+            # Add your command logic here
+            python3 Media-Tools/tools/sort-by-resolution.py
+            read -p "Press Enter to return to the menu..."
+            ;;           
         "View Metadata") 
             # Add your command logic here
             python3 Media-Tools/tools/view-metadata.py

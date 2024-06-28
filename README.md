@@ -39,5 +39,8 @@ This script organizes songs within a specified directory by creating folders nam
 ## Sort by Genre
 This script organizes songs by their genre, artist and albums associated with the artist.
 
+## Sort by Resolution
+This script organizes media based off their resolution.
+
 ## View Metadata
 The script `view-metadata` displays metadata associated with a specific media file and `view-metadata-all` shows all metadata of media files in a given directory.
