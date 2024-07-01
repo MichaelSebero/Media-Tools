@@ -1,6 +1,20 @@
 #!/bin/bash
 
-commands=("Compare Audio" "Convert to Opus" "Mass Crop Images" "Mass Thumbnail" "Remove Audio" "Rotate Video" "Sort by Album" "Sort by Artist" "Sort by Artist Recursive" "Sort by Genre" "Sort by Resolution" "View Metadata" "View Metadata All" "Quit")
+commands=(
+    "Compare Audio"
+    "Convert to Opus"
+    "Mass Crop Images"
+    "Mass Thumbnail"
+    "Remove Audio"
+    "Rotate Video"
+    "Sort by Album"
+    "Sort by Artist"
+    "Sort by Genre"
+    "Sort by Resolution"
+    "View Metadata"
+    "View Metadata All"
+    "Quit"
+)
 
 selected=0
 
@@ -25,67 +39,49 @@ display_list() {
 execute_command() {
     case ${commands[$selected]} in
         "Compare Audio") 
-            # Add your command logic here
-            python3 Media-Tools/tools/tools/compare-audio.py
+            python3 Media-Tools/tools/compare-audio.py
             read -p "Press Enter to return to the menu..."
             ;;
         "Convert to Opus") 
-            # Add your command logic here
             python3 Media-Tools/tools/convert-to-opus.py
             read -p "Press Enter to return to the menu..."
             ;;
         "Mass Crop Images") 
-            # Add your command logic here
             python3 Media-Tools/tools/mass-crop-images.py
             read -p "Press Enter to return to the menu..."
             ;;
         "Mass Thumbnail") 
-            # Add your command logic here
             python3 Media-Tools/tools/mass-thumbnail.py
             read -p "Press Enter to return to the menu..."
             ;;
         "Remove Audio")
-            # Add your command logic here
             python3 Media-Tools/tools/remove-audio.py
             read -p "Press Enter to return to the menu..."
             ;;        
         "Rotate Video")
-            # Add your command logic here
             python3 Media-Tools/tools/rotate-video.py
             read -p "Press Enter to return to the menu..."
             ;;              
         "Sort by Album") 
-            # Add your command logic here
             python3 Media-Tools/tools/sort-by-album.py
             read -p "Press Enter to return to the menu..."
             ;;                          
         "Sort by Artist") 
-            # Add your command logic here
-            python3 Media-Tools/tools/sort-by-artist.py
-            read -p "Press Enter to return to the menu..."
+            handle_sort_by_artist
             ;;  
-        "Sort by Artist Recursive") 
-            # Add your command logic here
-            python3 Media-Tools/tools/sort-by-artist-r.py
-            read -p "Press Enter to return to the menu..."
-            ;;
         "Sort by Genre")
-            # Add your command logic here
             python3 Media-Tools/tools/sort-by-genre.py
             read -p "Press Enter to return to the menu..."
             ;;        
         "Sort by Resolution")
-            # Add your command logic here
             python3 Media-Tools/tools/sort-by-resolution.py
             read -p "Press Enter to return to the menu..."
             ;;           
         "View Metadata") 
-            # Add your command logic here
             python3 Media-Tools/tools/view-metadata.py
             read -p "Press Enter to return to the menu..."
             ;;
         "View Metadata All") 
-            # Add your command logic here
             python3 Media-Tools/tools/view-metadata-all.py
             read -p "Press Enter to return to the menu..."
             ;;
@@ -97,6 +93,50 @@ execute_command() {
             echo -e "\nInvalid selection"
             ;;
     esac
+}
+
+# Function to handle Sort by Artist command and its recursive option
+handle_sort_by_artist() {
+    recursive_options=("Default" "Recursive" "Quit")
+    recursive_selected=0
+
+    while true; do
+        clear
+        echo -e "\033[1m  Sort by Artist Options\033[0m\n  --------------"
+        for i in "${!recursive_options[@]}"; do
+            if [ $i -eq $recursive_selected ]; then
+                echo -e "\033[1m➤ ${recursive_options[$i]}\033[0m\n"
+            else
+                echo -e "  ${recursive_options[$i]}\n"
+            fi
+        done
+
+        read -sn 1 key
+
+        case $key in
+            "A") ((recursive_selected--)); [ $recursive_selected -lt 0 ] && recursive_selected=$(( ${#recursive_options[@]} - 1 ));;
+            "B") ((recursive_selected++)); [ $recursive_selected -ge ${#recursive_options[@]} ] && recursive_selected=0 ;;
+            "") 
+                case ${recursive_options[$recursive_selected]} in
+                    "Default")
+                        python3 Media-Tools/tools/sort-by-artist.py
+                        read -p "Press Enter to return to the menu..."
+                        ;;
+                    "Recursive")
+                        python3 Media-Tools/tools/sort-by-artist-r.py
+                        read -p "Press Enter to return to the menu..."
+                        ;;
+                    "Quit")
+                        return
+                        ;;
+                    *) 
+                        echo -e "\nInvalid selection"
+                        ;;
+                esac
+                ;;
+            *) ;;
+        esac
+    done
 }
 
 # Main loop
