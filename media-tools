@@ -102,7 +102,7 @@ handle_sort_by_artist() {
 
     while true; do
         clear
-        echo -e "\033[1m  Sort by Artist Options\033[0m\n  --------------"
+        echo -e "\033[1m  Sort by Artist Options\033[0m\n  "
         for i in "${!recursive_options[@]}"; do
             if [ $i -eq $recursive_selected ]; then
                 echo -e "\033[1m➤ ${recursive_options[$i]}\033[0m\n"
