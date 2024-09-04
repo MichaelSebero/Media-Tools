@@ -28,13 +28,13 @@ This script generates a .cue file for `.flac` and `.mp3` files based off album m
 This script mass crops images to an output folder.
 
 ## Mass Thumbnail
-This script adds thumbnails of the user's choice to `.mp3` and `.flac` files in a given directory.
+This script adds thumbnails of the user's choice to `.flac` and `.mp3` files in a given directory.
 
 ## Remove Audio
 This script removes audio from video files in a given directory.
 
 ## Rotate Video
-This script rotates a video by 90, 180 or 270 depending on the user's choice.
+This script rotates a video by 90, 180 or 270 degrees depending on the user's choice.
 
 ## Sort by Album
 This script organizes songs within a specified directory by creating folders named after their album metadata.
@@ -49,4 +49,4 @@ This script organizes songs by their genre, artist and albums associated with th
 This script organizes media based off their resolution.
 
 ## View Metadata
-The script `view-metadata` displays metadata associated with a specific media file and `view-metadata-all` shows all metadata of media files in a given directory.
+The script `view-metadata` displays metadata associated with media files.

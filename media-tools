@@ -13,7 +13,6 @@ commands=(
     "Sort by Genre"
     "Sort by Resolution"
     "View Metadata"
-    "View Metadata All"
     "Quit"
 )
 
@@ -85,10 +84,6 @@ execute_command() {
             ;;           
         "View Metadata") 
             python3 ~/Media-Tools/tools/view-metadata.py
-            read -p "Press Enter to return to the menu..."
-            ;;
-        "View Metadata All") 
-            python3 ~/Media-Tools/tools/view-metadata-all.py
             read -p "Press Enter to return to the menu..."
             ;;
         "Quit") 
