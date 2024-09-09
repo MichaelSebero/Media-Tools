@@ -69,10 +69,12 @@ def create_rotated_directory(base_dir):
 def rotate_videos_in_directory(directory, angle):
     rotated_dir = create_rotated_directory(directory)
     temp_dir = tempfile.mkdtemp()  # Create a temporary directory for re-encoded files
-    
+
     try:
+        # Add support for .mov and other video formats
+        supported_formats = [".mp4", ".mov", ".webm"]  # Add more formats as needed
         for filename in os.listdir(directory):
-            if filename.endswith(".mp4"):  # Extend to other video formats if needed
+            if any(filename.endswith(ext) for ext in supported_formats):
                 input_file = os.path.join(directory, filename)
                 reencoded_file = reencode_video(input_file, temp_dir)
                 
