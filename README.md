@@ -21,9 +21,6 @@ This script compares two audio files using a spectrogram during the first 8 minu
 ## Convert to Opus
 This script converts all audio files in a given directory to `.opus` in a seperate folder.
 
-## Cue File Generator
-This script generates a .cue file for `.flac` and `.mp3` files based off album metadata.
-
 ## Mass Crop Images
 This script mass crops images to an output folder.
 
