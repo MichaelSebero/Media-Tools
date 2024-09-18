@@ -21,6 +21,9 @@ This script compares two audio files using a spectrogram during the first 8 minu
 ## Convert to Opus
 This script converts all audio files in a given directory to `.opus` in a seperate folder.
 
+## Generate Album Sections
+This script sorts songs in an album according to their CD metadata.
+
 ## Mass Crop Images
 This script mass crops images to an output folder.
 

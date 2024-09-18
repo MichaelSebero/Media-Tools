@@ -3,6 +3,7 @@
 commands=(
     "Compare Audio"
     "Convert to Opus"
+    "Generate Album Sections"
     "Mass Crop Images"
     "Mass Thumbnail"
     "Remove Audio"
@@ -45,6 +46,10 @@ execute_command() {
             python3 ~/Media-Tools/tools/convert-to-opus.py
             read -p "Press Enter to return to the menu..."
             ;;
+        "Generate Album Sections") 
+            python3 ~/Media-Tools/tools/generate-album-sections.py
+            read -p "Press Enter to return to the menu..."
+            ;;            
         "Mass Crop Images") 
             python3 ~/Media-Tools/tools/mass-crop-images.py
             read -p "Press Enter to return to the menu..."
