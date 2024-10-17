@@ -24,6 +24,9 @@ This script converts all audio files in a given directory to `.opus` in a sepera
 ## Generate Album Sections
 This script sorts songs in an album according to their CD metadata.
 
+## Lossless Separator
+This script separates `.flac` and `.ape` files based off of their metadata.
+
 ## Mass Crop Images
 This script mass crops images to an output folder.
 
