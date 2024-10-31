@@ -9,6 +9,7 @@ commands=(
     "Mass Thumbnail"
     "Remove Audio"
     "Rotate Video"
+    "Scale Image"
     "Sort by Album"
     "Sort by Artist"
     "Sort by Genre"
@@ -67,6 +68,10 @@ execute_command() {
             python3 ~/Media-Tools/tools/rotate-video.py
             read -p "Press Enter to return to the menu..."
             ;;              
+        "Scale Image")
+            python3 ~/Media-Tools/tools/scale-image.py
+            read -p "Press Enter to return to the menu..."
+            ;;            
         "Sort by Album") 
             python3 ~/Media-Tools/tools/sort-by-album.py
             read -p "Press Enter to return to the menu..."

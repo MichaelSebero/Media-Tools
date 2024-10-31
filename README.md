@@ -39,6 +39,9 @@ This script removes audio from video files in a given directory.
 ## Rotate Video
 This script rotates a video by 90, 180 or 270 degrees depending on the user's choice.
 
+## Scale Image
+This script scales an image to any given dimension.
+
 ## Sort by Album
 This script organizes songs within a specified directory by creating folders named after their album metadata.
 
